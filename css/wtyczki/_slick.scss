@@ -1,0 +1,119 @@
+@font-face{
+	font-family: 'slick';
+	font-weight: normal;
+	font-style: normal;
+	src: url('fonts/slick.eot');
+	src: url('fonts/slick.eot?#iefix') format('embedded-opentype'), 
+		 url('fonts/slick.woff') format('woff'), 
+		 url('fonts/slick.ttf') format('truetype'), 
+		 url('fonts/slick.svg#slick') format('svg');
+	}
+
+.slick-slider {
+	position: relative;
+	display: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent; 
+	width:100%;
+	z-index: 1;
+	.slick-track, .slick-list {
+		transform: translate3d(0, 0, 0);
+	}
+	&.slick-initialized {
+		display: block;
+	}
+}
+.slick-list {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	height:100%;
+	&:focus {outline: none;}
+	.dragging {
+		cursor: pointer;
+		cursor: hand;
+	}
+}
+.slick-track{
+	position: relative;
+	top: 0;
+	left: 0;
+	display: block;
+	height:100%;
+	&::before, &::after {
+		display:table;
+		content:'';
+	}
+	&::after {
+		clear: both;
+	}
+}
+.slick-loading .slick-track {
+	visibility: hidden;
+}
+.slick-slide {
+	display: none;
+	float: left;
+	min-height: 1px; 
+	img {
+		display: block;
+	}
+	&.slick-loading img {
+		display:none;
+	}
+	&.dragging img {
+		pointer-events:none;
+	}
+}
+.slick-initialized .slick-slide {
+	display:block;
+}
+.slick-loading .slick-slide {
+	visibility:hidden;
+}
+.slick-vertical .slick-slide {
+	display:block;
+	height:auto;
+	border:1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+	display: none;
+}
+.slick-loading .slick-list {
+	background: #fff url('fonts/ajax-loader.gif') center center no-repeat;
+}
+.slick-prev {
+	display: none !important;
+}
+.slick-next {
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 60px;
+	height: 100%;
+	padding: 0;
+	cursor: pointer;
+	color: transparent;
+	border: none;
+	outline: none;
+	background-image: url(obr/strz.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-color: rgba(#FFF,0);
+	transition: $animacja;
+	@include ekran('laptop') {
+		&:hover {
+			background-color: rgba(#FFF,.2)
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@function szerokosc-kolumny ($kol-szer) {
+    @return 100% / $kol-szer;
+}
+
+.kol-50, .kol-33, .kol-25, .kol-20, .kol-16 {
+	width: 100%;
+}
+@include ekran('tablet') {
+	.kol-50 {
+		width: szerokosc-kolumny(2);
+		&:nth-child(2n+1) {
+			clear: both;
+		}
+	}
+	.kol-33 {
+		width: szerokosc-kolumny(3);
+		&:nth-child(3n+1) {
+			clear: both;
+		}
+	}
+	.kol-25 {
+		width: szerokosc-kolumny(4);
+	}
+	.kol-20 {
+		width: szerokosc-kolumny(3);
+		&:nth-child(3n+1) {
+			clear: both;
+		}
+	}
+	.kol-16 {
+		width: szerokosc-kolumny(3);
+		&:nth-child(3n+1) {
+			clear: both;
+		}
+	}
+	[class*='kol-'] {
+		float: left;
+		padding-right: $padding-kolumn;
+		.rzad &:last-of-type {
+			padding-right: 0;
+		}
+	}
+}
+@include ekran('laptop') {
+	.kol-20 {
+		width: szerokosc-kolumny(5);
+		&:nth-child(3n+1) {
+			clear: none;
+		}
+		&:nth-child(5n+1) {
+			clear: both;
+		}
+	}
+	.kol-16 {
+		width: szerokosc-kolumny(6);
+		&:nth-child(3n+1) {
+			clear: none;
+		}
+		&:nth-child(6n+1) {
+			clear: both;
+		}
+	}
+}

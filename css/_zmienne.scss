@@ -1,0 +1,22 @@
+$ciemny-czerwony: #772C26;
+$bialy: #ffffff;
+$czarny: #000000;
+
+$kolor-podstawowy: $ciemny-czerwony;
+$kolor-linku: $czarny;
+$kolor-tekstu: $czarny;
+$kolor-tla: $bialy;
+$szerokosc-kontenera: 1200px;
+
+$animacja: all 0.3s ease-in-out;
+$font: ('Helvetica', 'Arial', sans-serif);
+
+$breakpoints: (
+    'smartfon': (min-width: 450px),
+    'tablet': (min-width: 720px),
+    'laptop': (min-width: 1100px),
+    'duzy': (min-width: 1300px),
+	'bduzy': (min-width: 1500px),
+);
+
+$padding-kolumn: 1rem;

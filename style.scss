@@ -1,0 +1,37 @@
+@import "css/main.scss";
+
+%tlo-cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+%wypelnienie {
+    position: absolute;
+	left:0;
+	width:100%;
+	height:100%;
+	top:0;
+	bottom:0;
+	right:0;
+	margin: 0;
+}
+
+/* STYLE OGÓLNE
+========================================================================== */
+
+body {
+	font-family: $font;
+	font-size: 1em;
+	@include ekran('laptop') {
+		font-size: 1em;
+	}
+}
+
+@import "css/szablon/_naglowek.scss";
+@import "css/szablon/_srodek.scss";
+@import "css/szablon/_stopka.scss";
+
+.bgcover {
+    @extend %tlo-cover;
+    background-image:url("obr/zamknij.svg");
+}
